@@ -4,10 +4,9 @@ import java.awt.event.*;
 
 
 public class Test implements ActionListener{
-		
 		float PI = 3.14159265359f;
 		public Test(){ // Constructor Method - same name as the class - no return type = used to initialize objects
-			
+
 			JFrame frame = new JFrame("Basic Geometry Calculations");
 			frame.setSize(800,400);
 			frame.setLocationRelativeTo(null);
@@ -119,14 +118,118 @@ public class Test implements ActionListener{
 			button12.addActionListener(this);
 			button12.setBounds(580, 180, 180, 50);
 		}
+		
+		
 	
 	public void actionPerformed(ActionEvent e) { // Method for ActionListener which passes an ActionEvent object as its argument
 	String btn = e.getActionCommand();
-			if (btn.equals("Area of Square")) {
-			String sideSquareAsString = JOptionPane.showInputDialog("Please enter the side of the square");
-			float resultSideSquare = Float.parseFloat(sideSquareAsString);
-			JOptionPane.showMessageDialog(null, "The area of the square is " + areaOfSquare(resultSideSquare) + ".", "", JOptionPane.INFORMATION_MESSAGE);
-			}
+	
+	if (btn.equals("Area of Square")) {
+		String sideSquareAsString = JOptionPane.showInputDialog("Please enter the side of the square");
+		float resultSideSquare = Float.parseFloat(sideSquareAsString);
+		JOptionPane.showMessageDialog(null, "The area of the square is " + areaOfSquare(resultSideSquare) + ".", "", JOptionPane.INFORMATION_MESSAGE);
+		}
+	
+	else if (btn.equals("Area of Circle")) {
+		String radiusAsString = JOptionPane.showInputDialog("Please enter the radius of the circle");
+
+		float radius = Float.parseFloat(radiusAsString); 
+
+		JOptionPane.showMessageDialog(null, "The area of the circle is: " + String.format("%.2f",(PI * Math.pow(radius, 2))), "Area of Circle", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Area of Rectangle")){
+		String lengthAsString = JOptionPane.showInputDialog("Please enter the length of the rectangle: ");
+		String widthAsString = JOptionPane.showInputDialog("Please enter the width of the rectangle: ");
+		
+		float length = Float.parseFloat(lengthAsString);
+		float width = Float.parseFloat(widthAsString);
+		
+		JOptionPane.showMessageDialog(null, "The area of the rectangle is: " + length * width);
+	}
+	
+	else if (btn.equals("Perimeter of Square")){
+		String sideAsString = JOptionPane.showInputDialog("Please enter the side of the square: ");
+	
+		float side = Float.parseFloat(sideAsString);
+		
+		JOptionPane.showMessageDialog(null, "The perimeter of the square is: " + (4 * side), "Perimeter of Rectangle", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Perimeter of Circle")){
+		String numberAsString = JOptionPane.showInputDialog("Please enter the radius of the circle: ");
+		
+		float number = Float.parseFloat(numberAsString);
+		
+		JOptionPane.showMessageDialog(null, "The perimeter of the circle is: " + String.format("%.2f",(number * 2 * PI)), "Perimeter of Circle", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Perimeter of Rectangle")){
+		String lengthAsString = JOptionPane.showInputDialog("Please enter in the length of your rectangle.");
+		String widthAsString = JOptionPane.showInputDialog("Please put in the width of your rectangle.");
+		
+		float length = Float.parseFloat(lengthAsString);
+		float width = Float.parseFloat(widthAsString);
+
+		JOptionPane.showMessageDialog(null, "The perimeter of the rectangle is: " + 2 * (length + width), "Perimeter of Rectangle", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Surface Area of Cylinder")){
+		String radiusAsString = JOptionPane.showInputDialog("Please enter a radius: ");
+		String heightAsString = JOptionPane.showInputDialog("Please enter a height: ");
+		
+		float radius = Float.parseFloat(radiusAsString);
+		float height = Float.parseFloat(heightAsString);
+		
+		JOptionPane.showMessageDialog(null, "The surface area of the cylinder is: " + String.format("%.2f", (2 * PI * radius * height + (2 * PI * Math.pow(radius, 2)))),"Surface Area of Cylinder",JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Surface Area of Cone")){
+		String radiusAsString = JOptionPane.showInputDialog("Please enter a radius.");
+		String heightAsString = JOptionPane.showInputDialog("Please enter a height.");
+		
+		float radius = Float.parseFloat(radiusAsString);
+		float height = Float.parseFloat(heightAsString);
+		
+		JOptionPane.showMessageDialog(null, "The surface area of the cone is: " + String.format("%.2f",PI * radius * (radius + Math.sqrt(Math.pow(radius, 2) + Math.pow(height, 2)))),"Surface Area of Cone", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Surface Area of Sphere")){
+		String radiusAsString = JOptionPane.showInputDialog("Please enter a radius: ");
+
+		float radius = Float.parseFloat(radiusAsString);
+		
+		JOptionPane.showMessageDialog(null, "The surface area of the sphere is: " + String.format("%.2f",(4 * PI * Math.pow(radius, 2))),"Surface Area of Cone",JOptionPane.INFORMATION_MESSAGE);
+	}
+	
+	else if (btn.equals("Volume of Cylinder")){
+	String radiusAsString = JOptionPane.showInputDialog("Please enter the radius of the cylinder: ");
+	String heightAsString = JOptionPane.showInputDialog("Please enter the height of the cylinder ");
+	
+	float radius = Float.parseFloat(radiusAsString);
+	float height = Float.parseFloat(heightAsString);
+	
+	JOptionPane.showMessageDialog(null, "The volume of the cylinder is: " + String.format("%.2f",(PI * radius * radius * height)), "Volume of Cylinder", JOptionPane.INFORMATION_MESSAGE);
+	}
+/*
+	else if (btn.equals("Volume of Cone")){
+	String radiusAsString = JOptionPane.showInputDialog("Please enter the radius of the cone: ");
+	String heightAsString = JOptionPane.showInputDialog("Please enter the height of the cone ");
+	
+	float radius = Float.parseFloat(radiusAsString);
+	float height = Float.parseFloat(heightAsString);
+	
+	JOptionPane.showMessageDialog(null, "The volume of the cylinder is: " + String.format("%.2f",(PI * radius * radius * height / 3)), "Volume of Cone", JOptionPane.INFORMATION_MESSAGE);
+	}
+	else if (btn.equals("Volume of Sphere")){
+	String radiusAsString = JOptionPane.showInputDialog("Please enter the radius of the sphere: ");
+	
+	float radius = Float.parseFloat(radiusAsString);
+	
+	JOptionPane.showMessageDialog(null, "The volume of the Sphere is: " + String.format("%.2f",(4.0/3.0 * PI * Math.pow(radius, 3))), "Volume of Sphere", JOptionPane.INFORMATION_MESSAGE);
+}
+	
+*/
 	}
 	
 	public static float areaOfSquare(float side){
@@ -135,6 +238,68 @@ public class Test implements ActionListener{
 			return result;
 	}
 	
+	public static float areaOfCircle(float radius){
+			float PI = 3.14159265359f;
+			float result = PI * radius * radius;
+			
+			return result;
+	}
+	
+	public static float areaOfRectangle(float width, float length){
+			float result = width * length;
+			
+			return result;
+	}
+	
+	public static float perimeterOfSquare(float side){
+			float result = 4 * side;
+			
+			return result;
+	}
+	
+	public static float perimeterOfCircle(float radius){
+			float PI = 3.14159265359f;
+			float result = 2 * PI * radius;
+			
+			return result;
+	}
+	
+	public static float perimeterOfRectangle(float width, float length){
+			float result = 2 * (length + width);
+			
+			return result;
+	}
+	
+	public static float surfaceAreaOfCylinder(float radius, float height){
+			float PI = 3.14159265359f;
+			float result = 2 * PI * radius * height + 2 * PI * radius * radius;
+			
+			return result;
+	}
+	
+	public static float surfaceAreaOfCone(float radius, float height){
+			float PI = 3.14159265359f;
+			float result =  PI * radius * (radius + (float)Math.sqrt(height * height + radius * radius));
+			
+			return result;
+	}
+	
+	public static float surfaceAreaOfSphere(float radius){
+			float PI = 3.14159265359f;
+			float result = 4 * PI * (float)Math.pow(radius, 2);
+			
+			return result;
+	}
+	
+	public static float volumeOfCylinder(float radius, float height){
+			float PI = 3.14159265359f;
+			float result = PI * (float)Math.pow(radius, 2) * height;
+			
+			return result;
+	}
+
+	
+
 		public static void main(String args[]){
 		new Test();
 		/*float PI = 3.14159265359f;
@@ -153,6 +318,7 @@ public class Test implements ActionListener{
 		float resultLengthRectangle = Float.parseFloat(lengthRectangleAsString);
 		JOptionPane.showMessageDialog(null, "The area of the rectangle is " + areaOfRectangle(resultWidthRectangle, resultLengthRectangle), "Area of Rectangle", JOptionPane.INFORMATION_MESSAGE);
 		*/
-
-	}
+		}
 }
+		
+
