@@ -5,11 +5,17 @@ public class test{
 		
 		String sideSquareAsString = JOptionPane.showInputDialog("Please enter the side of the square");
 		float resultSideSquare = Float.parseFloat(sideSquareAsString);
-		JOptionPane.showMessageDialog(null, "The side of the square is " + areaOfSquare(result) + ".", "", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, "The area of the square is " + areaOfSquare(result) + ".", "", JOptionPane.INFORMATION_MESSAGE);
 		
-		String areaCircleAsString = JOptionPane.showInputDialogDialog("Please enter the radius of the circle");
-		float areaCircleAsString = Float.parseFloat(areaCircleAsString);
+		String radiusCircleAsString = JOptionPane.showInputDialogDialog("Please enter the radius of the circle");
+		float resultRadiusCircleAsString = Float.parseFloat(radiusCircleAsString);
 		JOptionPane.showMessageDialog(null, "The area of the circle is: " + areaOfCircle(resultAreaCircleAsString), "Area of Circle", JOptionPane.INFORMATION_MESSAGE);
+		
+		String widthRectangleAsString = JOptionPane.showInputDialogDialog("Please enter the width of the rectangle");
+		String lengthRectangleAsString = JOptionPane.showInputDialog("Please enter the length of the rectangle")
+		float resultWidthRectangleAsString = Float.parseFloat(widthRectangleAsString);
+		float resultLengthRectangleAsString = Float.parseFloat(lengthRectangleAsStringAsString);
+		JOptionPane.showMessageDialog(null, "The area of the rectangle is " + areaOfRectangle(widthRectangleAsString, lengthRectangleAsString), "Area of Rectangle", JOptionPane.INFORMATION_MESSAGE);
 		
 
 	}
@@ -28,10 +34,10 @@ public class test{
 		return result;
 	}
 	
-	public static float max (float x, float y){
-		float maximum = Math.max(x, y);
+	public static float areaOfRectangle (float length, float width){
+		float result = width * length
 
-		return maximum;
+		return result;
 	}
 	
 	public static float max (float x, float y){
