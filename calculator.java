@@ -17,7 +17,7 @@ public class Calculator implements ActionListener {
         panel.setBackground(new Color(10, 25, 50));
         panel.setLayout(null);
         frame.add(panel);
-        JLabel label = new JLabel("Daniel Heelan, Sean Egoro, Javed Khan, Graham Coughlan");
+        JLabel label = new JLabel("Daniel Heelan, Sean Ogoro, Javed Khan, Graham Coughlan");
         label.setForeground(new Color(255, 255, 255));
         label.setBounds(220, -10, 400, 100);
         panel.add(label);
@@ -293,7 +293,7 @@ public class Calculator implements ActionListener {
 
     public static float volumeOfSphere(float radius) {
         float PI = 3.14159265359f;
-        float result = 2 / 3 * PI * (float) Math.pow(radius, 3);
+        float result = 4.0f / 3.0f * PI * (float) Math.pow(radius, 3);
 
         return result;
     }
