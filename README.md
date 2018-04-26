@@ -1,5 +1,4 @@
 # Java-Assignment-CORRECT-VERSION-
-# Java-Assignment
 
 Javed - Methods: Area of Square, Area of Circle<br/>
 Sean - Methods: Perimeter of Circle, Perimeter of Rectangle, Surface Area of Cylinder<br/>
